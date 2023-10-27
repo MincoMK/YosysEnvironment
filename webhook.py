@@ -5,5 +5,5 @@ requests.post(WEBHOOK_URL, json={"content": "Synthesis complete!"})
 files = os.scandir('.')
 for file in files:
     if file.name.endswith(".png"):
-        requests.post(WEBHOOK_URL, files={"net.png": open(file.path, "rb")})
+        requests.post(WEBHOOK_URL, files={"net": open(file.path, "rb")})
         print(f"[SYNTHGEN] Uploaded {file.path}")
