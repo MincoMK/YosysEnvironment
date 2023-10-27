@@ -1,6 +1,6 @@
 module ruma(rst, up, out);
     input rst;
-    input [7:0] up;
+    input up;
     output [7:0] out;
 
     reg [7:0] num;
