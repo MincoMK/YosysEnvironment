@@ -6,7 +6,6 @@ pipeline {
         stage("YoSys") {
             steps {
                 python3 synthgen.py
-                yosys synth.ys
             }
         }
         stage("SVGify") {
