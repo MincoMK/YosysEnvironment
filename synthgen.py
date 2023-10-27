@@ -20,6 +20,4 @@ write_json net.json"""
 with open("synth.ys", "w") as f:
     f.write(synth)
 
-os.system("yosys synth.ys")
-
 print("[SYNTHGEN] SUCCESS")

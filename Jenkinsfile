@@ -10,7 +10,7 @@ pipeline {
         }
         stage("SVGify") {
             steps {
-                netlistsvg net.json
+                netlistsvg net.json -o net.svg
             }
         }
         stage("ImageMagick") {
