@@ -11,7 +11,7 @@ for file in files:
             f.write(synth)
         print(f"[SYNTHGEN] Generated synth{i}.ys")
         result = os.system(f"yosys synth{i}.ys")
-        if not result:
+        if result != 0:
             print(f"[SYNTHGEN] Problem with synth{i}.ys")
             exit(1)
         i += 1
