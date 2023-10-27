@@ -7,14 +7,9 @@ pipeline {
                 sh "yosys synth.ys"
             }
         }
-        stage("SVGify") {
+        stage("Image Process") {
             steps {
-                sh "netlistsvg net.json -o net.svg"
-            }
-        }
-        stage("ImageMagick") {
-            steps {
-                sh "convert -background white -alpha remove -alpha off net.svg net.png"
+                sh "python3 imageprocess.py"
             }
         }
         stage("Send") {
