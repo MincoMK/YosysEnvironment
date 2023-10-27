@@ -10,7 +10,10 @@ for file in files:
         with open(f"synth{i}.ys", "w") as f:
             f.write(synth)
         print(f"[SYNTHGEN] Generated synth{i}.ys")
-        os.system(f"yosys synth{i}.ys")
+        result = os.system(f"yosys synth{i}.ys")
+        if not result:
+            print(f"[SYNTHGEN] Problem with synth{i}.ys")
+            exit(1)
         i += 1
 
 
