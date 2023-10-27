@@ -1,13 +1,12 @@
-module ruma(rst, up, out);
-    input rst;
-    input up;
-    output [7:0] out;
+module ruma(clk, rst, out);
+    input clk, rst;
+    output reg [7:0] out;
 
-    reg [7:0] num;
-
-    always @(posedge rst)
-        if (rst) num <= 0;
-
-    always @(posedge up)
-        if (up) num <= num + 1;
+    always @(posedge clk) begin
+        if (rst) begin
+            out <= 8'b0;
+        end else begin
+            out <= out + 1;
+        end
+    end
 endmodule
