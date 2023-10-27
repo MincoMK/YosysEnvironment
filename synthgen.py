@@ -17,7 +17,7 @@ opt
 write_json net{i}.json"""
         with open(f"synth{i}.ys", "w") as f:
             f.write(synth)
-        system(f"yosys synth{i}.ys")
+        os.system(f"yosys synth{i}.ys")
         i += 1
 
 
