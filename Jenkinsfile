@@ -16,5 +16,8 @@ pipeline {
         stage("ImageMagick") {
             convert -background white -alpha remove -alpha off net.svg net.png
         }
+        stage("Send") {
+            python3 webhook.py
+        }
     }
 }
