@@ -4,7 +4,6 @@ pipeline {
         stage("YoSys") {
             steps {
                 sh "python3 synthgen.py"
-                sh "yosys synth.ys"
             }
         }
         stage("Image Process") {
