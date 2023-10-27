@@ -1,5 +1,5 @@
 module ruma(clk, rst, out);
-    parameter WIDTH = 32;
+    parameter WIDTH = 4;
     input clk, rst;
     output reg [WIDTH-1:0] out;
 
