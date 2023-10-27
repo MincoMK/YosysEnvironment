@@ -1,10 +1,11 @@
 module ruma(clk, rst, out);
+    parameter WIDTH = 32;
     input clk, rst;
-    output reg [7:0] out;
+    output reg [WIDTH-1:0] out;
 
     always @(posedge clk) begin
         if (rst) begin
-            out <= 8'b0;
+            out <= WIDTH-1'b0;
         end else begin
             out <= out + 1;
         end
