@@ -5,22 +5,22 @@ pipeline {
     stages {
         stage("YoSys") {
             steps {
-                python3 synthgen.py
+                sh "python3 synthgen.py"
             }
         }
         stage("SVGify") {
             steps {
-                netlistsvg net.json -o net.svg
+                sh "netlistsvg net.json -o net.svg"
             }
         }
         stage("ImageMagick") {
             steps {
-                convert -background white -alpha remove -alpha off net.svg net.png
+                sh "convert -background white -alpha remove -alpha off net.svg net.png"
             }
         }
         stage("Send") {
             steps {
-                python3 webhook.py
+                sh "python3 webhook.py"
             }
         }
     }
